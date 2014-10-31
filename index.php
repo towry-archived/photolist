@@ -28,7 +28,7 @@ include "header.php";
             $iterator = new PhotoIterator( $photolist );
 
             foreach ( $iterator as $key => $photo) {
-                echo '<li>' . $photo->html() . '<a href="?delete=true&key=' . $iterator->key() . '" class="delete">x</a></li>' . "\n";
+                echo '<li>' . '<a href="' . $photo->getPath() . '" target="_blank">' . $photo->html() . '</a><a href="?delete=true&key=' . $iterator->key() . '" class="delete">x</a></li>' . "\n";
             }
 
             if ( ! $photolist->hasPhoto() ) {
